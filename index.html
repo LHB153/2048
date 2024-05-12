@@ -26,6 +26,7 @@
 
 <body>
   <div id="sidebar">
+    <button id="toggleSidebar" style="display: flex; ">《</button>
     <ul>
       <li><a href="#introduction-to-2048">2048 Game Strategy Tips</a></li>
       <ol>
@@ -41,6 +42,7 @@
     </ul>
   </div>
   <div id="language-sidebar">
+    <button id="toggleLanguageSidebar">》</button>
     <ul>
       <li>language</li>
       <li><a href="#" onclick="changeLanguage('en')" data-lang="en">English</a></li>
@@ -193,6 +195,40 @@
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-GTVZKP61YE"></script>
     <script>
+
+      // 获取按钮和侧边栏元素
+      const toggleSidebarBtn = document.getElementById('toggleSidebar');
+      const toggleLanguageSidebarBtn = document.getElementById('toggleLanguageSidebar');
+      const sidebar = document.getElementById('sidebar');
+      const languageSidebar = document.getElementById('language-sidebar');
+
+      // 监听按钮的点击事件
+      toggleSidebarBtn.addEventListener('click', () => {
+        // 切换侧边栏的宽度
+        sidebar.classList.toggle('collapsed');
+      });
+
+      toggleLanguageSidebarBtn.addEventListener('click', () => {
+        // 切换语言侧边栏的宽度
+        languageSidebar.classList.toggle('collapsed');
+      });
+
+      // 根据屏幕宽度自动切换侧边栏状态
+      window.addEventListener('resize', function() {
+        const screenWidth = window.innerWidth;
+        const sidebar = document.getElementById('sidebar');
+        const languageSidebar = document.getElementById('language-sidebar');
+        
+        // 如果屏幕宽度小于等于 1291 像素，则收起侧边栏；否则展开侧边栏
+        if (screenWidth <= 1291) {
+          sidebar.classList.add('collapsed');
+          languageSidebar.classList.add('collapsed');
+        } else {
+          sidebar.classList.remove('collapsed');
+          languageSidebar.classList.remove('collapsed');
+        }
+      });
+
       window.dataLayer = window.dataLayer || [];
       function gtag() { dataLayer.push(arguments); }
       gtag('js', new Date());

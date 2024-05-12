@@ -815,3 +815,37 @@ hr {
 #language-sidebar ul li a:hover {
   background-color: #ddd;
 }
+
+
+/* 默认样式 */
+#sidebar,
+#language-sidebar {
+  width: max-content;
+  /* 默认宽度 */
+  transition: width 0.5s ease;
+  /* 使用过渡效果 */
+}
+
+/* 媒体查询：小屏幕时收起侧边栏 */
+@media screen and (max-width: 1211px) {
+  #sidebar.collapsed,
+  #language-sidebar.collapsed {
+    display: none; /* 隐藏列表 */
+  }
+}
+
+/* 收起状态下的样式 */
+#sidebar.collapsed,
+#language-sidebar.collapsed {
+  /* width: 50px; */
+  display: none;
+
+}
+
+/* 按钮样式 */
+button {
+  flex: 1;
+  background-color: #f7c14b85;
+  border: none;
+  cursor: pointer;
+}
