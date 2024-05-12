@@ -827,9 +827,9 @@ hr {
 }
 
 /* 媒体查询：小屏幕时收起侧边栏 */
-@media screen and (max-width: 1211px) {
-  #sidebar.collapsed,
-  #language-sidebar.collapsed {
+@media screen and (max-width: 520px) {
+  #sidebar,
+  #language-sidebar {
     display: none; /* 隐藏列表 */
   }
 }
