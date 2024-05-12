@@ -1,26 +1,64 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="utf-8">
-  <meta name="description" content="Join the 2048 game and combine the numbers to reach the 2048 tile! Classic number puzzle game for all ages.">
+  <meta name="description"
+    content="Join the 2048 game and combine the numbers to reach the 2048 tile! Classic number puzzle game for all ages.">
   <title>2048</title>
 
   <link href="style/main.css" rel="stylesheet" type="text/css">
   <link rel="shortcut icon" href="favicon.ico">
   <link rel="apple-touch-icon" href="meta/apple-touch-icon.png">
-  <link rel="apple-touch-startup-image" href="meta/apple-touch-startup-image-640x1096.png" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)"> <!-- iPhone 5+ -->
-  <link rel="apple-touch-startup-image" href="meta/apple-touch-startup-image-640x920.png"  media="(device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 2)"> <!-- iPhone, retina -->
+  <link rel="apple-touch-startup-image" href="meta/apple-touch-startup-image-640x1096.png"
+    media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)"> <!-- iPhone 5+ -->
+  <link rel="apple-touch-startup-image" href="meta/apple-touch-startup-image-640x920.png"
+    media="(device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 2)">
+  <!-- iPhone, retina -->
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
 
   <meta name="HandheldFriendly" content="True">
   <meta name="MobileOptimized" content="320">
-  <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0, maximum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="viewport"
+    content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0, maximum-scale=1, user-scalable=no, minimal-ui">
 </head>
+
 <body>
+  <div id="sidebar">
+    <ul>
+      <li><a href="#introduction-to-2048">2048 Game Strategy Tips</a></li>
+      <ol>
+        <li><a href="#stay-in-the-corner">Stay in the Corner</a></li>
+        <li><a href="#sequential-arrangement">Sequential Arrangement</a></li>
+        <li><a href="#triangular-arrangement">Triangular Arrangement</a></li>
+        <li><a href="#layered-decomposition">Layered Decomposition</a></li>
+        <li><a href="#clear-path">Clear Path</a></li>
+        <li><a href="#concentrated-effort">Concentrated Effort</a></li>
+        <li><a href="#maintain-order">Maintain Order</a></li>
+        <li><a href="#lonely-2">Lonely 2</a></li>
+      </ol>
+    </ul>
+  </div>
+  <div id="language-sidebar">
+    <ul>
+      <li>language</li>
+      <li><a href="#" onclick="changeLanguage('en')" data-lang="en">English</a></li>
+      <li><a href="#" onclick="changeLanguage('zh')" data-lang="zh">中文</a></li>
+      <li><a href="#" onclick="changeLanguage('es')" data-lang="es">Español</a></li>
+      <li><a href="#" onclick="changeLanguage('fr')" data-lang="fr">Français</a></li>
+      <li><a href="#" onclick="changeLanguage('de')" data-lang="de">Deutsch</a></li>
+      <li><a href="#" onclick="changeLanguage('it')" data-lang="it">Italiano</a></li>
+      <li><a href="#" onclick="changeLanguage('ja')" data-lang="ja">日本語</a></li>
+      <li><a href="#" onclick="changeLanguage('ko')" data-lang="ko">한국어</a></li>
+      <li><a href="#" onclick="changeLanguage('ru')" data-lang="ru">Русский</a></li>
+      <li><a href="#" onclick="changeLanguage('ar')" data-lang="ar">العربية</a></li>
+      <!-- ... 其他语言 ... -->
+    </ul>
+  </div>
   <div class="container">
     <div class="heading">
-      <h1 class="title">2048</h1>
+      <h1 id="title" class="title">2048</h1>
       <div class="scores-container">
         <div class="score-container">0</div>
         <div class="best-container">0</div>
@@ -28,16 +66,16 @@
     </div>
 
     <div class="above-game">
-      <p class="game-intro">Join the numbers and get to the <strong>2048 tile!</strong></p>
-      <a class="restart-button">New Game</a>
+      <p id="game-intro" class="game-intro">加入数字并达到<strong>2048方块！</strong></p>
+      <a id="restart-button" class="restart-button">新游戏</a>
     </div>
 
     <div class="game-container">
       <div class="game-message">
         <p></p>
         <div class="lower">
-	        <a class="keep-playing-button">Keep going</a>
-          <a class="retry-button">Try again</a>
+          <a id="keep-playing-button" class="keep-playing-button">继续游戏</a>
+          <a id="retry-button" class="retry-button">重试</a>
         </div>
       </div>
 
@@ -73,13 +111,73 @@
       </div>
     </div>
 
-    <p class="game-explanation">
-      <strong class="important">How to play:</strong> Use your <strong>arrow keys</strong> to move the tiles. When two tiles with the same number touch, they <strong>merge into one!</strong>
+    <p id="game-explanation" class="game-explanation">
+      <strong class="important">How to play:</strong> Use your <strong>arrow keys</strong> to move the tiles. When two
+      tiles with the same number touch, they <strong>merge into one!</strong>
     </p>
     <hr>
     <p>
-    Created by Gabriele Cirulli.
+      Created by Gabriele Cirulli.
     </p>
+    <hr>
+
+    <div class="strategy-tips">
+      <h1 id="main-strategy-title">2048 Game Strategy Tips</h1>
+
+      <h2 id="introduction-to-2048">Introduction to 2048</h2>
+      <p id="introduction-description">The game 2048 is a simple yet addictive puzzle game where players move numbered
+        tiles on a grid to combine them
+        into larger numbers. The game starts with two tiles, each labeled with the number 2 or 4. Players use the arrow
+        keys to slide all tiles in one direction on each turn. When two tiles with the same number touch, they merge
+        into
+        a single tile with the sum of the two numbers. The ultimate goal of the game is to create a tile with the number
+        2048, hence the name of the game. However, the game does not end there; players can continue to play to achieve
+        higher numbers. The game ends when no more moves are possible — that is, when the grid is full and no adjacent
+        tiles can be combined.</p>
+
+      <h2 id="stay-in-the-corner">Stay in the Corner</h2>
+      <p id="stay-in-corner-description">At any given time, the largest tile should remain in the corner position. If it
+        accidentally moves out, it must
+        be quickly returned to the corner.</p>
+
+      <h2 id="sequential-arrangement">Sequential Arrangement</h2>
+      <p id="sequential-arrangement-description">Numbers of different sizes need to be arranged in sequence. The
+        simplest way is to arrange them from left to
+        right, as shown in the illustration below. (But in fact, you can arrange them left to right, top to bottom,
+        reversed, or even in a snake-like fashion. The numbers just need to be sequentially connected.)</p>
+
+      <h2 id="triangular-arrangement">Triangular Arrangement</h2>
+      <p id="triangular-arrangement-description">Place the tiles on the left and bottom, and let numbers of different
+        sizes spread outward, as shown in the
+        illustration below.</p>
+
+      <h2 id="layered-decomposition">Layered Decomposition</h2>
+      <p id="layered-decomposition-description">To synthesize 2048, the ideal setup is to have a 1024 in the bottom-left
+        corner, with a 512, 256, and 128 to the
+        right.</p>
+
+      <h2 id="clear-path">Clear Path</h2>
+      <p id="clear-path-description">After achieving 1024, focus on synthesizing a 512. Once you have 512, aim to
+        synthesize a 256.</p>
+
+      <h2 id="concentrated-effort">Concentrated Effort</h2>
+      <p id="concentrated-effort-description">Work on combining only one number at a time. For instance, if you're
+        aiming for a 256, concentrate on constantly
+        merging 2s and 4s to combine into 8, 16, and 32, and then combine those into 64, 128, and finally 256. In other
+        words, don't combine a 32 on the left, a 64 on the right, and a 16 above simultaneously.</p>
+
+      <h2 id="maintain-order">Maintain Order</h2>
+      <p id="maintain-order-description">Avoid having numbers of different sizes arranged out of order, like having 16,
+        64, and 32 together (the ideal
+        scenario is 16, 32, and 64, or 64, 32, and 16).</p>
+
+      <h2 id="lonely-2">Lonely 2</h2>
+      <p id="lonely-2-description">Don't let a newly spawned 2 get blocked by a 4. Always move the tiles so that two
+        newly spawned 2s can combine to
+        form a 4, which can help avoid a quick loss.</p>
+    </div>
+
+
   </div>
   <script src="js/bind_polyfill.js"></script>
   <script src="js/classlist_polyfill.js"></script>
@@ -91,16 +189,549 @@
   <script src="js/local_storage_manager.js"></script>
   <script src="js/game_manager.js"></script>
   <script src="js/application.js"></script>
-<div style="display: none;">
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-GTVZKP61YE"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <div style="display: none;">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GTVZKP61YE"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
 
-  gtag('config', 'G-GTVZKP61YE');
-</script>
-</div>
+      gtag('config', 'G-GTVZKP61YE');
+
+      function updateSidebar(lang) {
+        // 获取翻译数据
+        const sidebar = sidebarTranslations[lang];
+
+        // 更新侧边栏标题
+        document.querySelector("#sidebar > ul > li > a").innerText = sidebar.title;
+
+        // 更新侧边栏列表项
+        const items = document.querySelectorAll("#sidebar > ul > ol > li > a");
+        const sidebarItems = Object.values(sidebar.items);
+        items.forEach((item, index) => {
+          item.innerText = sidebarItems[index];
+        });
+
+        updateLanguageSidebarHighlight(lang)
+      }
+
+      // Sidebar translations
+      const sidebarTranslations = {
+        en: {
+          title: '2048 Game Strategy Tips',
+          items: {
+            stayInCorner: 'Stay in the Corner',
+            sequentialArrangement: 'Sequential Arrangement',
+            triangularArrangement: 'Triangular Arrangement',
+            layeredDecomposition: 'Layered Decomposition',
+            clearPath: 'Clear Path',
+            concentratedEffort: 'Concentrated Effort',
+            maintainOrder: 'Maintain Order',
+            lonely2: 'Lonely 2'
+          }
+        },
+        zh: {
+          title: '2048 游戏策略技巧',
+          items: {
+            stayInCorner: '保持在角落',
+            sequentialArrangement: '顺序排列',
+            triangularArrangement: '三角排列',
+            layeredDecomposition: '分层合成',
+            clearPath: '清除路径',
+            concentratedEffort: '集中精力',
+            maintainOrder: '保持顺序',
+            lonely2: '孤独的 2'
+          }
+        },
+        es: {
+          title: 'Consejos de estrategia para el juego 2048',
+          items: {
+            stayInCorner: 'Mantente en la esquina',
+            sequentialArrangement: 'Arreglo secuencial',
+            triangularArrangement: 'Arreglo triangular',
+            layeredDecomposition: 'Descomposición en capas',
+            clearPath: 'Camino claro',
+            concentratedEffort: 'Esfuerzo concentrado',
+            maintainOrder: 'Mantén el orden',
+            lonely2: 'Solitario 2'
+          }
+        },
+        fr: {
+          title: 'Conseils de stratégie pour le jeu 2048',
+          items: {
+            stayInCorner: 'Restez dans le coin',
+            sequentialArrangement: 'Disposition séquentielle',
+            triangularArrangement: 'Disposition triangulaire',
+            layeredDecomposition: 'Décomposition par couches',
+            clearPath: 'Chemin dégagé',
+            concentratedEffort: 'Effort concentré',
+            maintainOrder: 'Maintenir l\'ordre',
+            lonely2: '2 solitaire'
+          }
+        },
+        de: {
+          title: '2048 Spielstrategie Tipps',
+          items: {
+            stayInCorner: 'Bleiben Sie in der Ecke',
+            sequentialArrangement: 'Sequenzielle Anordnung',
+            triangularArrangement: 'Dreiecksanordnung',
+            layeredDecomposition: 'Schichtzerlegung',
+            clearPath: 'Klarer Weg',
+            concentratedEffort: 'Konzentrierter Aufwand',
+            maintainOrder: 'Ordnung beibehalten',
+            lonely2: 'Einsamer 2'
+          }
+        },
+        it: {
+          title: 'Consigli di strategia per il gioco 2048',
+          items: {
+            stayInCorner: 'Rimani nell\'angolo',
+            sequentialArrangement: 'Disposizione sequenziale',
+            triangularArrangement: 'Disposizione triangolare',
+            layeredDecomposition: 'Scomposizione stratificata',
+            clearPath: 'Percorso libero',
+            concentratedEffort: 'Sforzo concentrato',
+            maintainOrder: 'Mantieni l\'ordine',
+            lonely2: 'Solitario 2'
+          }
+        },
+        ja: {
+          title: '2048 ゲームの戦略ヒント',
+          items: {
+            stayInCorner: 'コーナーに留まる',
+            sequentialArrangement: '連続配置',
+            triangularArrangement: '三角配置',
+            layeredDecomposition: '分層合成',
+            clearPath: 'クリアパス',
+            concentratedEffort: '集中努力',
+            maintainOrder: '順序を保つ',
+            lonely2: '孤独な 2'
+          }
+        },
+        ko: {
+          title: '2048 게임 전략 팁',
+          items: {
+            stayInCorner: '코너에 머무르다',
+            sequentialArrangement: '순차적 배열',
+            triangularArrangement: '삼각형 배열',
+            layeredDecomposition: '층별 분해',
+            clearPath: '클리어 경로',
+            concentratedEffort: '집중 노력',
+            maintainOrder: '질서를 유지하다',
+            lonely2: '외로운 2'
+          }
+        },
+        ru: {
+          title: 'Советы по стратегии игры 2048',
+          items: {
+            stayInCorner: 'Держитесь в углу',
+            sequentialArrangement: 'Последовательное расположение',
+            triangularArrangement: 'Треугольное расположение',
+            layeredDecomposition: 'Слоистая декомпозиция',
+            clearPath: 'Чистый путь',
+            concentratedEffort: 'Концентрированные усилия',
+            maintainOrder: 'Соблюдайте порядок',
+            lonely2: 'Одинокий 2'
+          }
+        },
+        ar: {
+          title: 'نصائح استراتيجية لعبة 2048',
+          items: {
+            stayInCorner: 'ابق في الزاوية',
+            sequentialArrangement: 'ترتيب متسلسل',
+            triangularArrangement: 'ترتيب مثلث',
+            layeredDecomposition: 'التحلل الطبقي',
+            clearPath: 'مسار واضح',
+            concentratedEffort: 'جهد مركز',
+            maintainOrder: 'حافظ على النظام',
+            lonely2: '2 وحيد'
+          }
+        }
+      };
+
+      // Translation Data
+      const translations = {
+        en: {
+          title: '2048',
+          gameIntro: 'Join the numbers and get to the <strong>2048 tile!</strong>',
+          restartButton: 'New Game',
+          keepPlayingButton: 'Keep going',
+          retryButton: 'Try again',
+          gameExplanation: '<strong>How to play:</strong> Use your <strong>arrow keys</strong> to move the tiles. When two tiles with the same number touch, they <strong>merge into one!</strong>',
+          strategyTips: {
+            mainTitle: '2048 Game Strategy Tips',
+            introTitle: 'Introduction to 2048',
+            introDescription: 'The game 2048 is a simple yet addictive puzzle game where players move numbered tiles on a grid to combine them into larger numbers. The game starts with two tiles, each labeled with the number 2 or 4. Players use the arrow keys to slide all tiles in one direction on each turn. When two tiles with the same number touch, they merge into a single tile with the sum of the two numbers. The ultimate goal of the game is to create a tile with the number 2048, hence the name of the game. However, the game does not end there; players can continue to play to achieve higher numbers. The game ends when no more moves are possible — that is, when the grid is full and no adjacent tiles can be combined.',
+            stayInCornerTitle: 'Stay in the Corner',
+            stayInCornerDescription: 'At any given time, the largest tile should remain in the corner position. If it accidentally moves out, it must be quickly returned to the corner.',
+            sequentialArrangementTitle: 'Sequential Arrangement',
+            sequentialArrangementDescription: 'Numbers of different sizes need to be arranged in sequence. The simplest way is to arrange them from left to right, as shown in the illustration below. (But in fact, you can arrange them left to right, top to bottom, reversed, or even in a snake-like fashion. The numbers just need to be sequentially connected.)',
+            triangularArrangementTitle: 'Triangular Arrangement',
+            triangularArrangementDescription: 'Place the tiles on the left and bottom, and let numbers of different sizes spread outward, as shown in the illustration below.',
+            layeredDecompositionTitle: 'Layered Decomposition',
+            layeredDecompositionDescription: 'To synthesize 2048, the ideal setup is to have a 1024 in the bottom-left corner, with a 512, 256, and 128 to the right.',
+            clearPathTitle: 'Clear Path',
+            clearPathDescription: 'After achieving 1024, focus on synthesizing a 512. Once you have 512, aim to synthesize a 256.',
+            concentratedEffortTitle: 'Concentrated Effort',
+            concentratedEffortDescription: 'Work on combining only one number at a time. For instance, if you\'re aiming for a 256, concentrate on constantly merging 2s and 4s to combine into 8, 16, and 32, and then combine those into 64, 128, and finally 256. In other words, don\'t combine a 32 on the left, a 64 on the right, and a 16 above simultaneously.',
+            maintainOrderTitle: 'Maintain Order',
+            maintainOrderDescription: 'Avoid having numbers of different sizes arranged out of order, like having 16, 64, and 32 together (the ideal scenario is 16, 32, and 64, or 64, 32, and 16).',
+            lonely2Title: 'Lonely 2',
+            lonely2Description: 'Don\'t let a newly spawned 2 get blocked by a 4. Always move the tiles so that two newly spawned 2s can combine to form a 4, which can help avoid a quick loss.'
+          }
+        },
+        zh: {
+          title: '2048',
+          gameIntro: '合并数字，达到 <strong>2048 方块!</strong>',
+          restartButton: '新游戏',
+          keepPlayingButton: '继续',
+          retryButton: '再试一次',
+          gameExplanation: '<strong>怎么玩:</strong> 使用 <strong>方向键</strong> 来移动数字方块。相同数字方块相遇时，它们 <strong>合并成一块!</strong>',
+          strategyTips: {
+            mainTitle: '2048 游戏策略技巧',
+            introTitle: '2048 介绍',
+            introDescription: '2048 游戏是一个简单但令人上瘾的益智游戏，玩家在网格上移动数字方块以将它们合并成更大的数字。游戏从两个方块开始，方块上标有数字 2 或 4。玩家使用方向键每次移动所有方块朝一个方向滑动。当两个相同数字的方块接触时，它们会合并为一个数字是两者之和的方块。游戏的最终目标是创造一个数字为 2048 的方块，这也是游戏名称的由来。不过，游戏并不止于此；玩家可以继续游戏以达到更高的数字。游戏在无法再移动时结束，即当网格已满且没有相邻方块可以合并时。',
+            stayInCornerTitle: '保持在角落',
+            stayInCornerDescription: '在任何时候，最大的方块应该保持在角落位置。如果它意外移动出来，必须迅速将它重新放回角落。',
+            sequentialArrangementTitle: '顺序排列',
+            sequentialArrangementDescription: '大小不同的数字需要按顺序排列。最简单的方法是从左到右排列，如下图所示。（实际上，您可以将它们从左到右、从上到下、反转，甚至像蛇形一样排列。数字只需要按顺序连接即可。）',
+            triangularArrangementTitle: '三角排列',
+            triangularArrangementDescription: '将方块放在左边和底部，让不同尺寸的数字向外扩散，如下图所示。',
+            layeredDecompositionTitle: '分层合成',
+            layeredDecompositionDescription: '要合成 2048，理想的设置是左下角有一个 1024，右边是 512、256 和 128。',
+            clearPathTitle: '清除路径',
+            clearPathDescription: '在达到 1024 后，专注于合成 512。一旦您拥有 512，目标是合成 256。',
+            concentratedEffortTitle: '集中精力',
+            concentratedEffortDescription: '只专注于合成一个数字。例如，如果您的目标是 256，请专注于不断合并 2 和 4，以合成 8、16 和 32，然后将它们合并为 64、128，最后是 256。换句话说，不要同时在左边合并 32，在右边合并 64，以及上面合并 16。',
+            maintainOrderTitle: '保持顺序',
+            maintainOrderDescription: '避免将不同大小的数字混合排列，例如将 16、64 和 32 放在一起（理想情况是 16、32 和 64，或 64、32 和 16）。',
+            lonely2Title: '孤独的 2',
+            lonely2Description: '不要让新生成的 2 被 4 阻挡。始终移动方块，以便两个新生成的 2 可以合并成一个 4，从而帮助避免快速失败。'
+          }
+        },
+        es: {
+          title: '2048',
+          gameIntro: '¡Únete a los números y alcanza la baldosa <strong>2048!</strong>',
+          restartButton: 'Nuevo juego',
+          keepPlayingButton: 'Seguir jugando',
+          retryButton: 'Intentar de nuevo',
+          gameExplanation: '<strong>Cómo jugar:</strong> Usa las <strong>flechas</strong> para mover las fichas. Cuando dos fichas con el mismo número se toquen, se <strong>fusionan en una!</strong>',
+          strategyTips: {
+            mainTitle: 'Consejos de estrategia para el juego 2048',
+            introTitle: 'Introducción al 2048',
+            introDescription: 'El juego 2048 es un rompecabezas simple pero adictivo en el que los jugadores mueven fichas numeradas en una cuadrícula para combinarlas en números mayores. El juego comienza con dos fichas, cada una etiquetada con el número 2 o 4. Los jugadores usan las flechas para deslizar todas las fichas en una dirección en cada turno. Cuando dos fichas con el mismo número se tocan, se combinan en una sola ficha con la suma de ambos números. El objetivo final es crear una ficha con el número 2048, de ahí el nombre del juego. Sin embargo, el juego no termina ahí; los jugadores pueden seguir jugando para alcanzar números mayores. El juego termina cuando no hay más movimientos posibles, es decir, cuando la cuadrícula está llena y no hay fichas adyacentes que se puedan combinar.',
+            stayInCornerTitle: 'Mantente en la esquina',
+            stayInCornerDescription: 'En cualquier momento, la ficha más grande debe permanecer en la esquina. Si accidentalmente se mueve, debe volver rápidamente a la esquina.',
+            sequentialArrangementTitle: 'Arreglo secuencial',
+            sequentialArrangementDescription: 'Los números de diferentes tamaños deben organizarse en secuencia. La forma más sencilla es organizarlos de izquierda a derecha, como se muestra en la ilustración a continuación.',
+            triangularArrangementTitle: 'Arreglo triangular',
+            triangularArrangementDescription: 'Coloca las fichas a la izquierda y en la parte inferior, dejando que los números se expandan hacia afuera, como se muestra en la ilustración.',
+            layeredDecompositionTitle: 'Descomposición en capas',
+            layeredDecompositionDescription: 'Para sintetizar 2048, la configuración ideal es tener un 1024 en la esquina inferior izquierda, con 512, 256 y 128 a la derecha.',
+            clearPathTitle: 'Camino claro',
+            clearPathDescription: 'Después de alcanzar 1024, concéntrate en sintetizar un 512. Una vez que tengas 512, apunta a sintetizar un 256.',
+            concentratedEffortTitle: 'Esfuerzo concentrado',
+            concentratedEffortDescription: 'Trabaja en combinar solo un número a la vez.',
+            maintainOrderTitle: 'Mantén el orden',
+            maintainOrderDescription: 'Evita tener números de diferentes tamaños desorganizados.',
+            lonely2Title: 'Solitario 2',
+            lonely2Description: 'No dejes que un nuevo 2 sea bloqueado por un 4.'
+          }
+        },
+        fr: {
+          title: '2048',
+          gameIntro: 'Rejoignez les chiffres et atteignez la tuile <strong>2048!</strong>',
+          restartButton: 'Nouvelle partie',
+          keepPlayingButton: 'Continuer',
+          retryButton: 'Réessayer',
+          gameExplanation: '<strong>Comment jouer:</strong> Utilisez les <strong>flèches</strong> pour déplacer les tuiles. Lorsque deux tuiles avec le même numéro se touchent, elles <strong>fusionnent en une seule!</strong>',
+          strategyTips: {
+            mainTitle: 'Conseils de stratégie pour le jeu 2048',
+            introTitle: 'Introduction au 2048',
+            introDescription: 'Le jeu 2048 est un puzzle simple mais addictif dans lequel les joueurs déplacent des tuiles numérotées sur une grille pour les combiner en nombres plus importants.',
+            stayInCornerTitle: 'Restez dans le coin',
+            stayInCornerDescription: 'La plus grande tuile doit rester dans le coin.',
+            sequentialArrangementTitle: 'Disposition séquentielle',
+            sequentialArrangementDescription: 'Les nombres doivent être organisés en séquence.',
+            triangularArrangementTitle: 'Disposition triangulaire',
+            triangularArrangementDescription: 'Placez les tuiles à gauche et en bas.',
+            layeredDecompositionTitle: 'Décomposition par couches',
+            layeredDecompositionDescription: 'La configuration idéale est un 1024 dans le coin inférieur gauche.',
+            clearPathTitle: 'Chemin dégagé',
+            clearPathDescription: 'Concentrez-vous sur la synthèse d\'un 512.',
+            concentratedEffortTitle: 'Effort concentré',
+            concentratedEffortDescription: 'Travaillez sur un nombre à la fois.',
+            maintainOrderTitle: 'Maintenir l\'ordre',
+            maintainOrderDescription: 'Évitez d\'avoir des nombres désordonnés.',
+            lonely2Title: '2 solitaire',
+            lonely2Description: 'Ne laissez pas un 2 être bloqué par un 4.'
+          }
+        },
+        de: {
+          title: '2048',
+          gameIntro: 'Verbinden Sie die Zahlen und erreichen Sie die <strong>2048-Kachel!</strong>',
+          restartButton: 'Neues Spiel',
+          keepPlayingButton: 'Weiter spielen',
+          retryButton: 'Erneut versuchen',
+          gameExplanation: '<strong>Spielanleitung:</strong> Benutzen Sie die <strong>Pfeiltasten</strong>, um die Kacheln zu bewegen. Wenn zwei Kacheln mit derselben Zahl sich berühren, <strong>verschmelzen sie zu einer!</strong>',
+          strategyTips: {
+            mainTitle: '2048 Spielstrategie Tipps',
+            introTitle: 'Einführung in 2048',
+            introDescription: 'Das Spiel 2048 ist ein einfaches, aber süchtig machendes Puzzlespiel.',
+            stayInCornerTitle: 'Bleiben Sie in der Ecke',
+            stayInCornerDescription: 'Die größte Kachel sollte in der Ecke bleiben.',
+            sequentialArrangementTitle: 'Sequenzielle Anordnung',
+            sequentialArrangementDescription: 'Zahlen müssen in einer bestimmten Reihenfolge angeordnet sein.',
+            triangularArrangementTitle: 'Dreiecksanordnung',
+            triangularArrangementDescription: 'Platzieren Sie die Kacheln links und unten.',
+            layeredDecompositionTitle: 'Schichtzerlegung',
+            layeredDecompositionDescription: 'Die ideale Einstellung ist ein 1024 in der unteren linken Ecke.',
+            clearPathTitle: 'Klarer Weg',
+            clearPathDescription: 'Konzentrieren Sie sich auf die Synthese eines 512.',
+            concentratedEffortTitle: 'Konzentrierter Aufwand',
+            concentratedEffortDescription: 'Arbeiten Sie an einer Zahl gleichzeitig.',
+            maintainOrderTitle: 'Ordnung beibehalten',
+            maintainOrderDescription: 'Vermeiden Sie Unordnung.',
+            lonely2Title: 'Einsamer 2',
+            lonely2Description: 'Lassen Sie nicht zu, dass eine 2 durch eine 4 blockiert wird.'
+          }
+        },
+        it: {
+          title: '2048',
+          gameIntro: 'Unisci i numeri e raggiungi la tessera <strong>2048!</strong>',
+          restartButton: 'Nuova partita',
+          keepPlayingButton: 'Continua a giocare',
+          retryButton: 'Riprova',
+          gameExplanation: '<strong>Come giocare:</strong> Usa le <strong>frecce</strong> per spostare le tessere. Quando due tessere con lo stesso numero si toccano, si <strong>fondono in una!</strong>',
+          strategyTips: {
+            mainTitle: 'Consigli di strategia per il gioco 2048',
+            introTitle: 'Introduzione al 2048',
+            introDescription: 'Il gioco 2048 è un puzzle semplice ma coinvolgente.',
+            stayInCornerTitle: 'Rimani nell\'angolo',
+            stayInCornerDescription: 'La tessera più grande dovrebbe rimanere nell\'angolo.',
+            sequentialArrangementTitle: 'Disposizione sequenziale',
+            sequentialArrangementDescription: 'I numeri devono essere disposti in sequenza.',
+            triangularArrangementTitle: 'Disposizione triangolare',
+            triangularArrangementDescription: 'Posiziona le tessere a sinistra e in basso.',
+            layeredDecompositionTitle: 'Scomposizione stratificata',
+            layeredDecompositionDescription: 'L\'impostazione ideale è un 1024 nell\'angolo in basso a sinistra.',
+            clearPathTitle: 'Percorso libero',
+            clearPathDescription: 'Concentrati sulla sintesi di un 512.',
+            concentratedEffortTitle: 'Sforzo concentrato',
+            concentratedEffortDescription: 'Lavora su un numero alla volta.',
+            maintainOrderTitle: 'Mantieni l\'ordine',
+            maintainOrderDescription: 'Evita il disordine.',
+            lonely2Title: 'Solitario 2',
+            lonely2Description: 'Non lasciare che un 2 venga bloccato da un 4.'
+          }
+        },
+        ja: {
+          title: '2048',
+          gameIntro: '<strong>2048タイル</strong>に到達しよう！',
+          restartButton: '新しいゲーム',
+          keepPlayingButton: '続ける',
+          retryButton: 'もう一度',
+          gameExplanation: '<strong>遊び方:</strong> <strong>矢印キー</strong>でタイルを動かします。同じ数字のタイルが接触すると、<strong>1つに統合されます！</strong>',
+          strategyTips: {
+            mainTitle: '2048 ゲームの戦略ヒント',
+            introTitle: '2048 の紹介',
+            introDescription: '2048 は、シンプルだけど病みつきになるパズルゲームです。',
+            stayInCornerTitle: 'コーナーに留まる',
+            stayInCornerDescription: '最大のタイルはコーナーに残すべきです。',
+            sequentialArrangementTitle: '連続配置',
+            sequentialArrangementDescription: '数字は順序に並べる必要があります。',
+            triangularArrangementTitle: '三角配置',
+            triangularArrangementDescription: 'タイルを左と下に配置します。',
+            layeredDecompositionTitle: '分層合成',
+            layeredDecompositionDescription: '理想的な設定は、左下のコーナーに 1024 です。',
+            clearPathTitle: 'クリアパス',
+            clearPathDescription: '512 の合成に集中します。',
+            concentratedEffortTitle: '集中努力',
+            concentratedEffortDescription: '一度に1つの数値に取り組みます。',
+            maintainOrderTitle: '順序を保つ',
+            maintainOrderDescription: '混乱を避けます。',
+            lonely2Title: '孤独な 2',
+            lonely2Description: '新しく生まれた 2 が 4 に遮られることがないようにしましょう。'
+          }
+        },
+        ko: {
+          title: '2048',
+          gameIntro: '숫자를 합치고 <strong>2048 타일</strong>에 도달하세요!',
+          restartButton: '새 게임',
+          keepPlayingButton: '계속하기',
+          retryButton: '다시 시도',
+          gameExplanation: '<strong>게임 방법:</strong> <strong>화살표 키</strong>를 사용하여 타일을 이동합니다. 동일한 숫자의 타일이 접촉하면 <strong>하나로 병합됩니다!</strong>',
+          strategyTips: {
+            mainTitle: '2048 게임 전략 팁',
+            introTitle: '2048 소개',
+            introDescription: '2048 게임은 간단하지만 중독성 있는 퍼즐 게임입니다.',
+            stayInCornerTitle: '코너에 머무르다',
+            stayInCornerDescription: '가장 큰 타일은 코너에 있어야 합니다.',
+            sequentialArrangementTitle: '순차적 배열',
+            sequentialArrangementDescription: '숫자는 순서대로 배열해야 합니다.',
+            triangularArrangementTitle: '삼각형 배열',
+            triangularArrangementDescription: '타일을 왼쪽과 아래에 배치합니다.',
+            layeredDecompositionTitle: '층별 분해',
+            layeredDecompositionDescription: '이상적인 설정은 왼쪽 하단 모서리에 1024를 두는 것입니다.',
+            clearPathTitle: '클리어 경로',
+            clearPathDescription: '512 합성에 집중하십시오.',
+            concentratedEffortTitle: '집중 노력',
+            concentratedEffortDescription: '한 번에 하나의 숫자에 집중하십시오.',
+            maintainOrderTitle: '질서를 유지하다',
+            maintainOrderDescription: '혼란을 피하십시오.',
+            lonely2Title: '외로운 2',
+            lonely2Description: '새로 생성된 2가 4에 의해 차단되지 않도록 하십시오.'
+          }
+        },
+        ru: {
+          title: '2048',
+          gameIntro: 'Объединяйте числа и доберитесь до плитки <strong>2048!</strong>',
+          restartButton: 'Новая игра',
+          keepPlayingButton: 'Продолжать',
+          retryButton: 'Попробовать снова',
+          gameExplanation: '<strong>Как играть:</strong> Используйте <strong>стрелки</strong>, чтобы двигать плитки. Когда две плитки с одинаковым числом соприкасаются, они <strong>сливаются в одну!</strong>',
+          strategyTips: {
+            mainTitle: 'Советы по стратегии игры 2048',
+            introTitle: 'Введение в 2048',
+            introDescription: 'Игра 2048 - это простая, но увлекательная головоломка.',
+            stayInCornerTitle: 'Держитесь в углу',
+            stayInCornerDescription: 'Самая большая плитка должна оставаться в углу.',
+            sequentialArrangementTitle: 'Последовательное расположение',
+            sequentialArrangementDescription: 'Цифры должны располагаться последовательно.',
+            triangularArrangementTitle: 'Треугольное расположение',
+            triangularArrangementDescription: 'Разместите плитки слева и снизу.',
+            layeredDecompositionTitle: 'Слоистая декомпозиция',
+            layeredDecompositionDescription: 'Идеальная установка - 1024 в нижнем левом углу.',
+            clearPathTitle: 'Чистый путь',
+            clearPathDescription: 'Сосредоточьтесь на синтезе 512.',
+            concentratedEffortTitle: 'Концентрированные усилия',
+            concentratedEffortDescription: 'Работайте над одним числом за раз.',
+            maintainOrderTitle: 'Соблюдайте порядок',
+            maintainOrderDescription: 'Избегайте беспорядка.',
+            lonely2Title: 'Одинокий 2',
+            lonely2Description: 'Не позволяйте новому 2 блокироваться 4.'
+          }
+        },
+        ar: {
+          title: '2048',
+          gameIntro: 'اجمع الأرقام ووصل إلى البلاطة <strong>2048!</strong>',
+          restartButton: 'لعبة جديدة',
+          keepPlayingButton: 'استمر',
+          retryButton: 'حاول مرة أخرى',
+          gameExplanation: '<strong>كيفية اللعب:</strong> استخدم <strong>مفاتيح الأسهم</strong> لتحريك البلاط. عندما تتلامس قطعتان لهما نفس الرقم، فإنهما <strong>تندمجان في واحدة!</strong>',
+          strategyTips: {
+            mainTitle: 'نصائح استراتيجية لعبة 2048',
+            introTitle: 'مقدمة في لعبة 2048',
+            introDescription: 'لعبة 2048 هي لعبة ألغاز بسيطة لكنها تسبب الإدمان.',
+            stayInCornerTitle: 'ابق في الزاوية',
+            stayInCornerDescription: 'يجب أن تبقى أكبر قطعة في الزاوية.',
+            sequentialArrangementTitle: 'ترتيب متسلسل',
+            sequentialArrangementDescription: 'يجب ترتيب الأرقام بالتسلسل.',
+            triangularArrangementTitle: 'ترتيب مثلث',
+            triangularArrangementDescription: 'ضع القطع على اليسار والأسفل.',
+            layeredDecompositionTitle: 'التحلل الطبقي',
+            layeredDecompositionDescription: 'الإعداد المثالي هو وجود 1024 في الزاوية اليسرى السفلية.',
+            clearPathTitle: 'مسار واضح',
+            clearPathDescription: 'ركز على دمج 512.',
+            concentratedEffortTitle: 'جهد مركز',
+            concentratedEffortDescription: 'اعمل على دمج رقم واحد في كل مرة.',
+            maintainOrderTitle: 'حافظ على النظام',
+            maintainOrderDescription: 'تجنب الفوضى.',
+            lonely2Title: '2 وحيد',
+            lonely2Description: 'لا تدع 2 الجديدة تسدها 4.'
+          }
+        }
+      };
+
+      // Function to Change Language
+      function changeLanguage(lang) {
+        const elements = {
+          title: 'title',
+          gameIntro: 'game-intro',
+          restartButton: 'restart-button',
+          keepPlayingButton: 'keep-playing-button',
+          retryButton: 'retry-button',
+          gameExplanation: 'game-explanation',
+          strategyTips: {
+            mainTitle: 'main-strategy-title',
+            introTitle: 'introduction-to-2048',
+            introDescription: 'introduction-description',
+            stayInCornerTitle: 'stay-in-the-corner',
+            stayInCornerDescription: 'stay-in-corner-description',
+            sequentialArrangementTitle: 'sequential-arrangement',
+            sequentialArrangementDescription: 'sequential-arrangement-description',
+            triangularArrangementTitle: 'triangular-arrangement',
+            triangularArrangementDescription: 'triangular-arrangement-description',
+            layeredDecompositionTitle: 'layered-decomposition',
+            layeredDecompositionDescription: 'layered-decomposition-description',
+            clearPathTitle: 'clear-path',
+            clearPathDescription: 'clear-path-description',
+            concentratedEffortTitle: 'concentrated-effort',
+            concentratedEffortDescription: 'concentrated-effort-description',
+            maintainOrderTitle: 'maintain-order',
+            maintainOrderDescription: 'maintain-order-description',
+            lonely2Title: 'lonely-2',
+            lonely2Description: 'lonely-2-description'
+          }
+        };
+
+        // 更新主标题和按钮的文本
+        for (const [key, id] of Object.entries(elements)) {
+          if (typeof translations[lang][key] === 'string') {
+            document.getElementById(id).innerHTML = translations[lang][key];
+          } else {
+            // 更新策略提示部分
+            for (const [subKey, subId] of Object.entries(elements[key])) {
+              document.getElementById(subId).innerHTML = translations[lang][key][subKey];
+            }
+          }
+        }
+        // 更新侧边栏
+        updateSidebar(lang);
+      }
+
+      // 更新侧边栏语言选择项目的高亮显示
+      function updateLanguageSidebarHighlight(language) {
+        // 移除现有的高亮项目
+        const languageItems = document.querySelectorAll('#language-sidebar a');
+        languageItems.forEach(item => item.classList.remove('active'));
+
+        // 根据语言标识设置对应项目高亮显示
+        const currentLanguageItem = document.querySelector(`#language-sidebar a[data-lang="${language}"]`);
+        if (currentLanguageItem) {
+          currentLanguageItem.classList.add('active');
+        }
+      }
+
+      // 根据用户的浏览器语言检测并设置语言
+      function detectLanguage() {
+        let currentLanguage;
+        // 获取用户的首选语言
+        const userLanguage = navigator.language || navigator.languages[0] || 'en';
+
+        // 从语言标识符中提取简码部分（例如：en-US -> en）
+        const shortLang = userLanguage.split('-')[0];
+
+        // 检查翻译中是否存在此语言
+        if (translations.hasOwnProperty(shortLang)) {
+          currentLanguage = shortLang;
+          changeLanguage(currentLanguage);
+        } else {
+          currentLanguage = 'en';
+          // 默认回退到英文
+          changeLanguage(currentLanguage);
+        }
+
+        // 更新侧边栏高亮显示
+        updateLanguageSidebarHighlight(currentLanguage);
+      }
+      // // Default to English
+      // changeLanguage('en');
+      // 页面加载时调用
+      document.addEventListener('DOMContentLoaded', detectLanguage);
+    </script>
+  </div>
 </body>
+
 </html>
