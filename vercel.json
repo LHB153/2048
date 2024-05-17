@@ -1,8 +1,8 @@
 {
     "rewrites": [
-        {
-            "source": "/2048-CUPCAKES",
-            "destination": "/2048-CUPCAKES/index.html"
-        }
+      {
+        "source": "/(.*)",
+        "destination": "/index.html"
+      }
     ]
-}
+  }
