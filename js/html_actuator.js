@@ -3,6 +3,7 @@ function HTMLActuator() {
   this.scoreContainer   = document.querySelector(".score-container");
   this.bestContainer    = document.querySelector(".best-container");
   this.messageContainer = document.querySelector(".game-message");
+  this.sharingContainer = document.querySelector(".score-sharing");
 
   this.score = 0;
 }
@@ -130,10 +131,29 @@ HTMLActuator.prototype.message = function (won) {
 
   this.messageContainer.classList.add(type);
   this.messageContainer.getElementsByTagName("p")[0].textContent = message;
+
+  this.clearContainer(this.sharingContainer);
+  this.sharingContainer.appendChild(this.scoreTweetButton());
+  twttr.widgets.load();
 };
 
 HTMLActuator.prototype.clearMessage = function () {
   // IE only takes one value to remove at a time.
   this.messageContainer.classList.remove("game-won");
   this.messageContainer.classList.remove("game-over");
+};
+
+HTMLActuator.prototype.scoreTweetButton = function () {
+  var tweet = document.createElement("a");
+  tweet.classList.add("twitter-share-button");
+  tweet.setAttribute("href", "https://twitter.com/share");
+  // tweet.setAttribute("data-via", "giampiex");
+  tweet.setAttribute("data-url", "https://2048play.co/2048-CUPCAKES");
+  tweet.setAttribute("data-counturl", "https://2048play.co/2048-CUPCAKES");
+  tweet.textContent = "Tweet";
+
+  // var text = Localize("tweet1") + Localize( this.score ).toUpperCase() + '", ' + this.points + " Kcal " + Localize("tweet2");
+  // tweet.setAttribute("data-text", text);
+
+  return tweet;
 };
