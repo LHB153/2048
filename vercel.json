@@ -5,12 +5,12 @@
         "destination": "/2048-CUPCAKES/index.html"
       },
       {
-        "source": "/(.*)",
-        "destination": "/index.html"
-      },
-      {
         "source": "/1",
         "destination": "/meaning/index.html"
+      },
+      {
+        "source": "/(.*)",
+        "destination": "/index.html"
       }
     ]
   }
