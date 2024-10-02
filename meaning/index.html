@@ -1,119 +1,202 @@
-<!-- 实现一个内嵌网页的网页，嵌入网址为 https://wtf.hiigara.net/t/mRIFuS -->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>你的意义是什么鬼东西</title>
+    <title>探索你的意义</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f9;
-            color: #333;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background-color: #f0f0f0;
             margin: 0;
-            padding: 0;
+            padding: 20px;
+            color: #333;
         }
-        header {
-            background-color: #4CAF50;
-            color: white;
-            padding: 10px 0;
-            text-align: center;
-            font-size: 2em;
-        }
+
         .container {
             max-width: 800px;
-            margin: 20px auto;
-            padding: 20px;
+            margin: 0 auto;
             background-color: white;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
-        h2 {
-            color: #4CAF50;
-        }
-        p {
-            line-height: 1.6;
-        }
-        .example {
-            background-color: #e7f3e7;
-            padding: 10px;
-            border-left: 5px solid #4CAF50;
-        }
-        .btn {
-            display: inline-block;
-            background-color: #4CAF50;
+
+        .header {
+            background-color: #1a237e;
             color: white;
-            padding: 10px 20px;
+            padding: 20px;
             text-align: center;
+        }
+
+        .content {
+            padding: 20px;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        h2 {
+            font-size: 24px;
+            color: #1a237e;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            margin: 10px 0;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #1a237e;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            width: 100%;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #303f9f;
+        }
+
+        #result, #card-container {
+            margin-top: 20px;
+            background-color: #e8eaf6;
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        #card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            margin-bottom: 15px;
+            position: relative;
+            min-height: 200px; /* 确保卡片有足够的高度 */
+        }
+
+        #card .link {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            font-size: 12px;
+            color: #666;
+        }
+
+        #card .link a {
+            color: #1a237e;
             text-decoration: none;
-            border-radius: 5px;
-            margin-top: 20px;
         }
-        .btn:hover {
-            background-color: #45a049;
-        }
-        footer {
+
+        .footer {
             text-align: center;
-            padding: 10px;
-            background-color: #f1f1f1;
-            margin-top: 20px;
+            padding: 20px;
+            background-color: #1a237e;
+            color: white;
+            font-size: 14px;
         }
     </style>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
 </head>
 
 <body>
-    <header>
-        你的意义是什么鬼东西
-    </header>
-
-    <iframe src="https://wtf.hiigara.net/t/mRIFuS" style="width: 100vw; height: 60vh;"></iframe>
     <div class="container">
-        <h2>探索名字背后的神秘象征</h2>
-        <p>在这个快节奏的世界里，每个人的名字背后都隐藏着独特的故事和深刻的意义。名字不仅仅是身份的标识，它还象征着性格、情感、命运甚至宇宙的某种奥秘。而我们的网站就是专门为您提供一个简单而有趣的方式，探索您名字背后的这些深刻意义。</p>
-    
-        <h2>游戏介绍</h2>
-        <p>我们的 <strong>名字意义生成游戏</strong> 是一款让您通过输入名字，快速生成象征性意义的互动游戏。无论您是想发现自己的名字背后藏着什么秘密，还是想为朋友解读他们名字的特别之处，这款游戏都会为您带来全新的体验。</p>
-    
-        <h2>游戏规则</h2>
-        <p>游戏规则非常简单：</p>
-        <ul>
-            <li>输入您的名字，系统会根据特定算法生成与您的名字相关的象征性意义。</li>
-            <li>这些象征意义与宇宙、情感、命运等元素相结合，展现丰富且深刻的解读。</li>
-        </ul>
-        <p>例如，输入“张三”，系统可能会生成与张三名字相关的宇宙、情话、夕阳下摔碎的瓶子等象征性词汇。每个名字的解读都是独一无二的，背后隐藏着个性化的象征意义。</p>
-    
-        <h2>为什么玩这款游戏？</h2>
-        <p>这款游戏不仅有趣，还能为您带来以下体验：</p>
-        <ul>
-            <li><strong>探索自我</strong>：从新的角度理解自己的名字，发现名字所赋予的独特象征意义。</li>
-            <li><strong>社交乐趣</strong>：输入朋友的名字，为他们生成独特的解读，轻松打破沉默，增添趣味。</li>
-            <li><strong>哲思与趣味并存</strong>：通过名字探索与人生、情感、命运等相关的深刻隐喻。</li>
-        </ul>
-    
-        <h2>举例说明</h2>
-        <div class="example">
-            <p>假如您的名字是“李明”，系统可能会为您生成以下结果：</p>
-            <ul>
-                <li><strong>宇宙</strong>：李明的名字与宇宙紧密相连，象征广阔无垠的心胸和对未来的无限期待。</li>
-                <li><strong>初恋</strong>：李明的性格可能非常重情重义，他的初恋在他心中占据了一个特殊的位置。</li>
-                <li><strong>时间的滴答声</strong>：这个名字还与时间的流逝联系起来，暗示着李明对人生无常的思考。</li>
-            </ul>
+        <div class="header">
+            <h1>你的意义是什么?</h1>
+            <p>每个人都有意义，也许没有，我不知道</p>
         </div>
-    
-        <h2>如何开始？</h2>
-        <ol>
-            <li><strong>输入名字</strong>：在网站首页，输入您的名字或朋友的名字。</li>
-            <li><strong>点击生成</strong>：点击“生成名字的意义”，几秒内获取名字的独特象征解读。</li>
-        </ol>
+        <div class="content">
+            <h2>开始你的意义之旅</h2>
+            <p>输入你的名字，让我们揭示你独特的意义。</p>
+            <input type="text" placeholder="输入你的名字" id="name-input">
+            <button onclick="searchMeaning()">探索我的意义</button>
+            <div id="result"></div>
+            <div id="card-container" style="display: none;"></div>
+        </div>
+        <!-- <div class="footer">
+            &copy; 2023 意义探索器。保留所有权利。
+        </div> -->
     </div>
-</body>
-<style>
-    iframe[src*="googleads"] {
-        display: none !important;
-    }
-    section {
-        display: none !important;
-    }
-</style>
 
+    <script src="meaning.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            function searchMeaning() {
+                var name = document.getElementById('name-input').value;
+                var result = document.getElementById('result');
+                var cardContainer = document.getElementById('card-container');
+                if (name) {
+                    // 将名字映射为1到990之间的数字
+                    var nameSum = 0;
+                    for (var i = 0; i < name.length; i++) {
+                        nameSum += name.charCodeAt(i);
+                    }
+                    var mappedNumber = (nameSum % 990) + 1; // 确保结果在1到990之间
+
+                    // 使用映射后的数字来选择随机文字
+                    var index = (mappedNumber - 1) % meanings.length;
+                    var meaning = meanings[index];
+                    result.innerHTML = "<p>" + name + "的意义是：" + meaning + "</p>";
+                    
+                    // 生成卡片
+                    generateCard(name, meaning);
+                } else {
+                    result.innerHTML = "<p>请输入你的名字。</p>";
+                    cardContainer.style.display = 'none';
+                }
+            }
+
+            function generateCard(name, meaning) {
+                var cardContainer = document.getElementById('card-container');
+                cardContainer.innerHTML = `
+                    <div id="card">
+                        <h3 style="color: #1a237e;">${name}的意义</h3>
+                        <p>${meaning}</p>
+                        <div class="link">
+                            探索更多：<a href="https://2048play.co/1">2048play.co/1</a>
+                        </div>
+                    </div>
+                    <button onclick="saveCard('${name}')">保存卡片为图片</button>
+                `;
+                cardContainer.style.display = 'block';
+            }
+
+            function saveCard(name) {
+                var card = document.getElementById('card');
+                html2canvas(card).then(function(canvas) {
+                    var link = document.createElement('a');
+                    link.download = `${name}的意义卡片.png`;
+                    link.href = canvas.toDataURL();
+                    link.click();
+                });
+            }
+
+            // 将函数绑定到全局作用域
+            window.searchMeaning = searchMeaning;
+            window.saveCard = saveCard;
+        });
+    </script>
+</body>
 </html>
