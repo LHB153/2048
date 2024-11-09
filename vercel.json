@@ -1,6 +1,10 @@
 {
     "rewrites": [
       {
+        "source": "/One-Direction-2048",
+        "destination": "/One-Direction-2048/index.html"
+      },
+      {
         "source": "/2048-CUPCAKES",
         "destination": "/2048-CUPCAKES/index.html"
       },
