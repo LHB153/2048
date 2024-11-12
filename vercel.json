@@ -1,6 +1,10 @@
 {
     "rewrites": [
       {
+        "source": "/play-2048-co",
+        "destination": "/play-2048-co/index.html"
+      },
+      {
         "source": "/2048-Taylor-Swift",
         "destination": "/2048-Taylor-Swift/index.html"
       },

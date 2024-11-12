@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discover the addictive puzzle game 2048! Learn how to play, strategies to win, and the fascinating history behind this viral sensation. Join millions of players worldwide in this challenging number sliding game.">
+    <title>2048 Game - The Ultimate Number Sliding Puzzle Game | Play 2048</title>
+    <style>
+        :root {
+            --primary: #776e65;
+            --secondary: #bbada0;
+            --accent: #f2b179;
+            --background: #faf8ef;
+            --text: #776e65;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background-color: var(--background);
+        }
+        
+        .header {
+            background-color: var(--accent);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .hero {
+            text-align: center;
+            padding: 4rem 0;
+            background: linear-gradient(45deg, var(--secondary), var(--accent));
+            color: white;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .hero p {
+            font-size: 1.25rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .section {
+            padding: 4rem 0;
+        }
+        
+        .section:nth-child(even) {
+            background-color: white;
+        }
+        
+        .section h2 {
+            color: var(--primary);
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .feature-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .cta {
+            background-color: var(--accent);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 4px;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 2rem;
+            transition: background-color 0.3s ease;
+        }
+        
+        .cta:hover {
+            background-color: var(--primary);
+        }
+        
+        .stats {
+            text-align: center;
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 4rem 0;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+        
+        .stat-card h3 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        footer {
+            background-color: var(--primary);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .section h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <div class="container">
+            <h1>Welcome to 2048 - The Addictive Number Puzzle Game</h1>
+            <p>Join millions of players worldwide in mastering this captivating sliding tile puzzle game that's taken the world by storm!</p>
+            <a href="https://2048play.co/" class="cta">Play 2048 Now</a>
+        </div>
+    </div>
+
+    <section class="section">
+        <div class="container">
+            <h2>What is 2048?</h2>
+            <p>2048 is an engaging single-player sliding tile puzzle game that has captured the hearts and minds of millions worldwide. Created by Italian developer Gabriele Cirulli in 2014, this free and open-source game challenges players to combine numbered tiles on a 4×4 grid to reach the elusive 2048 tile.</p>
+            <p>The game's simple yet addictive mechanics have made it a global phenomenon, with players from all corners of the world competing to achieve higher scores and master various strategies.</p>
+        </div>
+    </section>
+
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3>10M+</h3>
+                    <p>Players Worldwide</p>
+                </div>
+                <div class="stat-card">
+                    <h3>2014</h3>
+                    <p>Year Created</p>
+                </div>
+                <div class="stat-card">
+                    <h3>4×4</h3>
+                    <p>Grid Size</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2>How to Play 2048</h2>
+            <div class="grid">
+                <div class="feature-card">
+                    <h3>Basic Rules</h3>
+                    <p>Use arrow keys to slide numbered tiles on a 4×4 grid. When two tiles with the same number collide, they merge into one tile with the sum of their values. The goal is to create a tile with the number 2048!</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Tile Generation</h3>
+                    <p>After each move, a new tile appears in a random empty space. New tiles have a value of either 2 (90% chance) or 4 (10% chance). Plan your moves carefully to avoid running out of space!</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Scoring</h3>
+                    <p>Your score increases with each successful tile merge. The larger the numbers you combine, the higher your score. Can you beat your personal best?</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2>Winning Strategies for 2048</h2>
+            <div class="grid">
+                <div class="feature-card">
+                    <h3>Corner Strategy</h3>
+                    <p>Keep your largest tile in a corner and build descending values along the edges. This creates a stable structure and prevents tile fragmentation.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Chain Building</h3>
+                    <p>Create chains of tiles with ascending or descending values. This makes it easier to merge tiles systematically and achieve higher numbers.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Movement Patterns</h3>
+                    <p>Develop consistent movement patterns, typically using two primary directions. This helps maintain organization and prevents tiles from becoming scattered.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2>The Story Behind 2048</h2>
+            <p>2048 was created by 19-year-old Italian web developer Gabriele Cirulli in March 2014. What started as a weekend project quickly became a viral sensation, attracting over 4 million visitors in less than a week. Despite its massive success, Cirulli chose to keep the game free to play, releasing it as open-source software under the MIT License.</p>
+            <p>The game's popularity led to numerous variations and adaptations, spawning an entire genre of similar puzzle games. Today, 2048 continues to challenge and entertain players worldwide, with new versions and variations constantly emerging.</p>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2>Why Players Love 2048</h2>
+            <div class="grid">
+                <div class="feature-card">
+                    <h3>Simple but Challenging</h3>
+                    <p>2048's straightforward rules make it easy to learn, but mastering the game requires strategy, planning, and practice.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Addictive Gameplay</h3>
+                    <p>The satisfaction of merging tiles and watching numbers grow keeps players coming back for more.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Perfect Time-Killer</h3>
+                    <p>Whether you have a few minutes or hours, 2048 provides endless entertainment and mental stimulation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>© 2024 2048play.co - The Ultimate Destination for 2048 Game Enthusiasts</p>
+        </div>
+    </footer>
+</body>
+</html>
