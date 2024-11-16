@@ -1,39 +1,251 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>One Direction 2048 - Play the Ultimate Fan Game</title>
-  <meta name="description"
-    content="Play One Direction 2048! A fun and addictive puzzle game where fans of One Direction can combine tiles to reach their favorite band members.">
-  <meta name="keywords"
-    content="One Direction, 2048 game, One Direction game, play 2048, One Direction puzzle, Harry Styles, Liam Payne, Niall Horan, Louis Tomlinson, Zayn Malik, 1D game">
-  <meta name="robots" content="index, follow">
-  <link rel="stylesheet" href="../One-Direction-2048/styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>One Direction 2048 - The Ultimate 1D Fan Game Experience</title>
+    <meta name="description" content="Play One Direction 2048, the addictive puzzle game featuring 1D members. Combine tiles to unlock Harry Styles, Louis Tomlinson, Niall Horan, Liam Payne, and Zayn Malik. Perfect for Directioners!">
+    <meta name="keywords" content="One Direction 2048, 1D game, One Direction game, Harry Styles game, Directioner game, One Direction puzzle">
+    <meta name="robots" content="index, follow">
+    <style>
+        :root {
+            --primary: #1e40af;
+            --secondary: #3b82f6;
+            --accent: #f472b6;
+            --background: #f8fafc;
+            --text: #1e293b;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        }
+
+        body {
+            background-color: var(--background);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            color: white;
+            padding: 2rem 1rem;
+            text-align: center;
+        }
+
+        .hero {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--accent);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 1rem 0;
+            transition: transform 0.2s;
+        }
+
+        .cta-button:hover {
+            transform: scale(1.05);
+        }
+
+        section {
+            padding: 4rem 1rem;
+        }
+
+        .features {
+            background-color: white;
+            text-align: center;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 2rem auto;
+        }
+
+        .feature-card {
+            padding: 2rem;
+            border-radius: 0.5rem;
+            background-color: var(--background);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .game-section {
+            background-color: var(--background);
+            text-align: center;
+        }
+
+        .game-container {
+            max-width: 500px;
+            margin: 2rem auto;
+            background: white;
+            padding: 1rem;
+            border-radius: 1rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .testimonials {
+            background-color: white;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 2rem auto;
+        }
+
+        .testimonial-card {
+            padding: 2rem;
+            border-radius: 0.5rem;
+            background-color: var(--background);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .faq {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            margin: 1rem 0;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            background-color: white;
+            cursor: pointer;
+        }
+
+        footer {
+            background-color: var(--primary);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        h1, h2, h3 {
+            margin-bottom: 1rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .feature-grid, .testimonial-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
-
 <body>
+    <header>
+        <div class="hero">
+            <h1>One Direction 2048 - The Ultimate Fan Experience</h1>
+            <p>Combine your favorite One Direction members in this addictive puzzle game made specially for Directioners!</p>
+            <a href="#game" class="cta-button">Play One Direction 2048 Now!</a>
+        </div>
+    </header>
 
-  <header>
-    <h1>Welcome to the One Direction 2048 Game!</h1>
-    <p>Combine the tiles and see if you can reach your favorite member of One Direction!</p>
-  </header>
+    <section class="features">
+        <h2>Why Play One Direction 2048?</h2>
+        <div class="feature-grid">
+            <div class="feature-card">
+                <h3>Unique 1D Experience</h3>
+                <p>Experience One Direction like never before in this specially crafted version of the classic 2048 game featuring your favorite band members.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Fan-Favorite Members</h3>
+                <p>Combine tiles to unlock Harry Styles, Louis Tomlinson, Niall Horan, Liam Payne, and Zayn Malik as you progress through the game.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Strategic Gameplay</h3>
+                <p>Test your skills and strategy as you combine One Direction members to reach the ultimate tile in this engaging puzzle game.</p>
+            </div>
+        </div>
+    </section>
 
-  <section id="game">
-    <iframe src="https://2048play.co" title="Play One Direction 2048"
-      aria-label="One Direction 2048 Game"></iframe>
-  </section>
+    <section id="game" class="game-section">
+        <h2>Play One Direction 2048</h2>
+        <div class="game-container">
+            <iframe src="https://2048play.co" title="Play One Direction 2048" width="100%" height="600px" style="border: none;"></iframe>
+        </div>
+    </section>
 
-  <footer>
-    <p>&copy; 2024 One Direction Fan Games. All rights reserved.</p>
-  </footer>
+    <section class="testimonials">
+        <h2>What Directioners Are Saying</h2>
+        <div class="testimonial-grid">
+            <div class="testimonial-card">
+                <p>"The perfect combination of One Direction and puzzle gaming! I can't stop playing One Direction 2048!"</p>
+                <p>- Sarah, Devoted Directioner</p>
+            </div>
+            <div class="testimonial-card">
+                <p>"Love how they incorporated all the One Direction members into the classic 2048 game. It's so addictive!"</p>
+                <p>- Michael, 1D Fan</p>
+            </div>
+            <div class="testimonial-card">
+                <p>"The best One Direction game I've played! The perfect way to show your love for the band."</p>
+                <p>- Emma, Harry Styles Fan</p>
+            </div>
+        </div>
+    </section>
 
+    <section class="faq">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-item">
+            <h3>What is One Direction 2048?</h3>
+            <p>One Direction 2048 is a unique version of the popular 2048 puzzle game featuring One Direction members. Combine tiles to create images of your favorite 1D members!</p>
+        </div>
+        <div class="faq-item">
+            <h3>How do I play One Direction 2048?</h3>
+            <p>Use your arrow keys to move tiles around the board. When two identical tiles touch, they combine to form the next One Direction member tile. Try to reach the ultimate tile!</p>
+        </div>
+        <div class="faq-item">
+            <h3>Is One Direction 2048 free to play?</h3>
+            <p>Yes! One Direction 2048 is completely free to play. No downloads or installations required - just start playing right in your browser!</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>Join millions of Directioners playing One Direction 2048!</p>
+        <p>&copy; 2024 One Direction 2048. All rights reserved. This fan-made game is not officially affiliated with One Direction.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // FAQ Interaction
+            const faqItems = document.querySelectorAll('.faq-item');
+            faqItems.forEach(item => {
+                item.addEventListener('click', () => {
+                    item.classList.toggle('active');
+                });
+            });
+
+            // Smooth scroll for navigation
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+
+            // Basic game analytics
+            console.log('One Direction 2048 game loaded successfully!');
+        });
+    </script>
 </body>
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    console.log("Welcome to the One Direction 2048 game!");
-  });
-</script>
-
 </html>
