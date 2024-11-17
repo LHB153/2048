@@ -7,7 +7,7 @@
     <priority>0.8</priority>
   </url>
   <url>
-      <lov>https://2048play.co/Taylor-Swift</loc>
+      <loc>https://2048play.co/Taylor-Swift</loc>
       <lastmod>2024-01-15</lastmod>
       <changefreq>weekly</changefreq>
       <priority>1.0</priority>
