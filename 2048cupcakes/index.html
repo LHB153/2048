@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="2048 Cupcakes is a fun and addictive puzzle game that combines the classic 2048 mechanics with sweet cupcakes. Try to reach the ultimate cupcake value!">
+    <meta name="keywords" content="2048, 2048 Cupcakes, puzzle game, online game, merge cupcakes, game strategy">
+    <title>2048 Cupcakes - Online Puzzle Game</title>
+    <style>
+        /* Global Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+            padding: 0;
+            margin: 0;
+        }
+
+        header {
+            background-color: #ff4081;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        header h1 {
+            font-size: 3em;
+            margin-bottom: 0;
+        }
+
+        header p {
+            font-size: 1.2em;
+            margin-top: 10px;
+        }
+
+        section {
+            padding: 40px 20px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        section h2 {
+            font-size: 2.5em;
+            color: #ff4081;
+            margin-bottom: 20px;
+        }
+
+        section p, section ul {
+            font-size: 1.1em;
+            line-height: 1.8;
+        }
+
+        section ul {
+            list-style-type: none;
+            padding-left: 20px;
+        }
+
+        section ul li {
+            margin-bottom: 10px;
+        }
+
+        .game-container iframe {
+            border: 5px solid #ff4081;
+            border-radius: 10px;
+        }
+
+        .cta {
+            text-align: center;
+            background-color: #ff4081;
+            padding: 40px 20px;
+            border-radius: 8px;
+            color: white;
+        }
+
+        .cta h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        .btn-start {
+            text-decoration: none;
+            background-color: #fff;
+            color: #ff4081;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-start:hover {
+            background-color: #f8f8f8;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>2048 Cupcakes</h1>
+            <p>Challenge yourself, merge delicious cupcakes!</p>
+        </div>
+    </header>
+
+    <section class="intro">
+        <h2>What is 2048 Cupcakes?</h2>
+        <p>2048 Cupcakes is a fun and visually appealing puzzle game that combines the classic 2048 mechanics with a sweet cupcake theme. In this game, you need to merge identical cupcakes by sliding them around the grid. Your goal is to create the highest possible cupcake value on the grid by merging cupcakes strategically.</p>
+    </section>
+
+    <section class="gameplay">
+        <h2>Gameplay</h2>
+        <p>The gameplay of 2048 Cupcakes is similar to the classic 2048 puzzle. You play on a 4x4 grid, and each time you make a move, a new cupcake with a value of 2 or 4 appears on the grid. By sliding the cupcakes in different directions, you can merge identical cupcakes. When two cupcakes with the same value collide, they merge into a new cupcake with a higher value, which will increase your score!</p>
+        <div class="game-container">
+            <iframe src="https://2048play.co/2048-CUPCAKES" width="100%" height="800" frameborder="0"></iframe>
+        </div>
+    </section>
+
+    <section class="instructions">
+        <h2>How to Play</h2>
+        <ul>
+            <li>Use the arrow keys (up, down, left, right) to slide the cupcakes.</li>
+            <li>When two cupcakes with the same number collide, they will merge into one new cupcake with the sum of their values.</li>
+            <li>The goal is to create a cupcake with the value of 2048.</li>
+            <li>The game ends when no more moves are possible.</li>
+        </ul>
+    </section>
+
+    <section class="strategy">
+        <h2>Tips and Strategy for 2048 Cupcakes</h2>
+        <p>Want to score higher in 2048 Cupcakes? Here are some strategies to help you play better:</p>
+        <ul>
+            <li><strong>Stay Calm:</strong> Don't rush your moves. Take your time and plan each step carefully.</li>
+            <li><strong>Concentrate on Merging:</strong> Try to keep the same value cupcakes together to avoid a chaotic grid.</li>
+            <li><strong>Think Ahead:</strong> Avoid merging too frequently and create space for new cupcakes to appear.</li>
+            <li><strong>Use Corners:</strong> Place larger value cupcakes in one corner to better control the game board.</li>
+        </ul>
+    </section>
+
+    <section class="cta">
+        Ready to test your strategic thinking? Click the button below to start playing!
+        <a href="https://2048play.co/2048-CUPCAKES" class="btn-start">Start Game</a>
+    </section>
+
+    <script>
+        document.querySelector('.btn-start').addEventListener('click', function(event) {
+            alert('You are about to start the 2048 Cupcakes game!');
+        });
+    </script>
+</body>
+</html>

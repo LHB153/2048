@@ -1,6 +1,10 @@
 {
     "rewrites": [
       {
+        "source": "/2048cupcakes",
+        "destination": "/2048cupcakes/index.html"
+      },
+      {
         "source": "/Taylor-Swift",
         "destination": "/Taylor-Swift-2048/index.html"
       },
