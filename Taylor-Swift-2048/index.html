@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Play the Taylor Swift themed 2048 game featuring her iconic albums. Enjoy a puzzle game filled with Taylor Swift’s journey through music.">
+    <meta name="keywords" content="Taylor Swift, 2048, Taylor Swift Albums, Puzzle Game, Taylor Swift 2048">
+    <title>Taylor Swift 2048 Albums Game | Merge Your Favorite Albums!</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+    <style>
+        :root {
+            --primary-color: #6f42c1;
+            --primary-hover: #5a34a3;
+            --background-color: #f9f9f9;
+            --section-background: #ffffff;
+            --shadow-color: rgba(0, 0, 0, 0.1);
+            --text-color: #333;
+            --footer-background: #333;
+            --footer-text: #fff;
+            --border-radius: 10px;
+            --box-shadow: 0 2px 15px var(--shadow-color);
+            --padding-section: 40px;
+            --margin-section: 20px;
+            --transition-speed: 0.3s;
+        }
+
+        /* Enable smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            padding: 20px;
+            color: var(--footer-text);
+            text-align: center;
+            box-shadow: 0 2px 10px var(--shadow-color);
+        }
+
+        header h1 {
+            margin-bottom: 10px;
+            font-size: 2em;
+        }
+
+        header p {
+            font-size: 1.2em;
+        }
+
+        .section {
+            padding: var(--padding-section) 20px;
+            margin: var(--margin-section);
+            background-color: var(--section-background);
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+        }
+
+        .game-intro, .albums-section, .gameplay-section, .strategy-section, .fun-section, .game-container {
+            max-width: 800px;
+            margin: var(--margin-section) auto;
+        }
+
+        .album-list {
+            list-style: none;
+        }
+
+        .album-list li {
+            margin: 10px 0;
+            font-size: 18px;
+            padding: 10px;
+            background: var(--section-background);
+            border-radius: 5px;
+            box-shadow: 0 1px 5px var(--shadow-color);
+        }
+
+        .play-button {
+            background-color: var(--primary-color);
+            color: var(--footer-text);
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 20px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background-color var(--transition-speed) ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .play-button:hover {
+            background-color: var(--primary-hover);
+        }
+
+        footer {
+            text-align: center;
+            background-color: var(--footer-background);
+            color: var(--footer-text);
+            padding: 20px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            box-shadow: 0 -2px 10px var(--shadow-color);
+        }
+
+        iframe {
+            width: 100%;
+            height: 800px;
+            border: none;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .section {
+                padding: 20px;
+            }
+
+            .play-button {
+                width: 100%;
+                padding: 15px;
+                text-align: center;
+            }
+
+            iframe {
+                height: 400px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Taylor Swift 2048 Albums Game</h1>
+        <p>Merge Taylor Swift’s albums and relive her iconic musical journey!</p>
+    </header>
+
+    <section id="game" class="game-container section">
+        <iframe src="https://www.iqutest.com/games/2048taylorswift/index.html" title="Taylor Swift 2048 Game" loading="lazy"></iframe>
+    </section>
+
+    <section class="game-intro section">
+        <h2>About Taylor Swift 2048</h2>
+        <p>The Taylor Swift 2048 game is a twist on the classic 2048 puzzle game, where fans get to combine Taylor’s albums by merging matching tiles. Each time you merge the tiles, you reveal another one of Taylor’s iconic albums. From her debut self-titled album to "Midnights," this game allows you to play your way through her musical journey and discover the next stage of her career. Are you ready to create the ultimate album tile?</p>
+        <!-- 修改按钮为链接，指向游戏区域 -->
+        <a href="#game" class="play-button">Play Now</a>
+    </section>
+
+    <!-- 将 iframe 放置在前面，并添加 id="game" 作为锚点 -->
+
+    <section class="albums-section section">
+        <h2>Albums Featured in the Game</h2>
+        <ul class="album-list">
+            <li>Taylor Swift (2006)</li>
+            <li>Fearless (2008)</li>
+            <li>Speak Now (2010)</li>
+            <li>Red (2012)</li>
+            <li>1989 (2014)</li>
+            <li>Reputation (2017)</li>
+            <li>Lover (2019)</li>
+            <li>Folklore (2020)</li>
+            <li>Evermore (2020)</li>
+            <li>Fearless (Taylor's Version) (2021)</li>
+            <li>Red (Taylor's Version) (2021)</li>
+            <li>Speak Now (Taylor's Version)</li>
+            <li>Lover (Live from Paris) (2023)</li>
+            <li>Speak Now World Tour</li>
+            <li>The Taylor Swift Holiday Collection</li>
+        </ul>
+    </section>
+
+    <section class="gameplay-section section">
+        <h2>How to Play 2048 Taylor Swift</h2>
+        <p>The game is simple yet challenging. Move the tiles on the 4x4 grid in four directions—up, down, left, and right. When two tiles with the same Taylor Swift album cover collide, they merge to create a new tile representing the next album in her discography. The objective is to reach the highest score possible and ultimately reveal all of Taylor’s albums, with the ultimate goal of reaching the winning tile.</p>
+    </section>
+
+    <section class="strategy-section section">
+        <h2>Winning Strategy Tips</h2>
+        <p>To master the Taylor Swift 2048 game, here are some strategies you can use:</p>
+        <ul>
+            <li>Keep your highest-valued album tiles in a corner for easier merging.</li>
+            <li>Focus on creating chains of tiles in one direction to maximize space.</li>
+            <li>Plan ahead and think carefully about each move—one wrong step can block your progress.</li>
+            <li>Experiment with different strategies, learn from mistakes, and improve over time.</li>
+        </ul>
+    </section>
+
+    <section class="fun-section section">
+        <h2>Why Fans Love Taylor Swift 2048</h2>
+        <p>The 2048 Taylor Swift game is not just a puzzle—it's a celebration of Taylor Swift's career, bringing fans closer to her albums in an interactive way. Whether you're a Swiftie looking to revisit your favorite Taylor moments or a puzzle enthusiast wanting to try something new, this game is for you. With an easy-to-learn interface and a colorful album-themed design, it's perfect for both new and experienced players.</p>
+        <p>Plus, you can challenge your friends to see who can get the highest score—it's a fun way to show off your love for Taylor's music and to compete against fellow fans.</p>
+    </section>
+
+</body>
+</html>

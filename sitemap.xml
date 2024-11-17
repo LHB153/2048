@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"> 
+  <url>
+      <lov>https://2048play.co/Taylor-Swift</loc>
+      <lastmod>2024-01-15</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>1.0</priority>
+  </url>
    <url>
       <loc>https://2048play.co/play-2048-co</loc>
       <lastmod>2024-01-15</lastmod>
